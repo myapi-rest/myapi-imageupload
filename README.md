@@ -5,23 +5,18 @@
 
 # myapi.rest — Image Upload API
 
-Upload images via a simple REST API and receive a hosted URL plus metadata such as file size, content type, and processing time.
+Upload and host images instantly via a simple REST API.
 
-This repository contains:
+## Features
+- Upload Base64‑encoded images  
+- Automatic content type detection  
+- Returns hosted image URL  
+- Fast and lightweight  
 
-- Documentation in `/docs`
-- Language examples in `/examples`
-- A Postman collection in `/examples/postman`
-
----
-
-## 🚀 Quick Example
+## Quick Example
 
 ```bash
-curl --location 'https://api.myapi.rest/api/image/upload' \
-  --header 'Content-Type: application/json' \
-  --header 'Authorization: Bearer <API_KEY>' \
-  --data '{
+curl --location 'https://api.myapi.rest/api/image/upload'   --header 'Authorization: Bearer <API_KEY>'   --header 'Content-Type: application/json'   --data '{
     "file_base64": "<BASE_64_DATA>",
     "file_name": "logo.png"
   }'
@@ -38,3 +33,21 @@ curl --location 'https://api.myapi.rest/api/image/upload' \
   "ms": 67
 }
 ```
+
+## Documentation
+See the [`/docs`](./docs) folder for full usage guides, examples, errors, and endpoint details.
+
+## Examples
+Language examples are available in the [`/examples`](./examples) directory, including:
+- C#
+- JavaScript
+- Python
+- PHP
+- Postman Collection
+
+## myapi.rest Suite
+
+This API is part of the broader **myapi.rest** developer suite.  
+For all APIs, documentation, and examples, visit:
+
+👉 https://github.com/myapi-rest/myapi.rest
