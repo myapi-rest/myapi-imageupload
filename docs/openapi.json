@@ -1,0 +1,60 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "myapi.rest — Image Upload API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "https://api.myapi.rest" }
+  ],
+  "paths": {
+    "/api/image/upload": {
+      "post": {
+        "summary": "Upload and host an image",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file_base64": { "type": "string" },
+                  "file_name": { "type": "string" }
+                },
+                "required": ["file_base64", "file_name"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Image uploaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "url": { "type": "string" },
+                    "size": { "type": "integer" },
+                    "content_type": { "type": "string" },
+                    "ms": { "type": "integer" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
