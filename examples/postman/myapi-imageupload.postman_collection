@@ -1,0 +1,29 @@
+{
+    "info": {
+        "name": "myapi.rest \u2014 Image Upload API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Upload Image",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <API_KEY>"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": "https://api.myapi.rest/api/image/upload",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"file_base64\": \"<BASE_64_DATA>\",\n    \"file_name\": \"logo.png\"\n}"
+                }
+            }
+        }
+    ]
+}
